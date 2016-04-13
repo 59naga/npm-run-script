@@ -25,3 +25,10 @@ test('shell command should spawn in as much as possible', async (t) => {
 
   t.true(code === 59);
 });
+
+test('should `exit` always execute as shell command', async (t) => {
+  const child = npmRunScript('exit 59', { stdio: 'ignore' });
+  const code = await result(child);
+
+  t.true(code === 59);
+});

@@ -26,7 +26,10 @@ export default (command, options = {}) => {
   };
 
   const parsedCommand = parse(command);
-  const notShellCommand = parsedCommand.reduce((can, op) => can && typeof op === 'string', true);
+  let notShellCommand = parsedCommand.reduce((can, op) => can && typeof op === 'string', true);
+  if (parsedCommand[0] === 'exit') {
+    notShellCommand = false;
+  }
 
   let child;
   if (notShellCommand) {
