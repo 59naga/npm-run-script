@@ -1,0 +1,78 @@
+{
+  "name": "npm-run-script",
+  "description": "emulate the `npm run-script` using stdio",
+  "version": "0.0.0",
+  "main": "lib",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "npm-run-path": "^1.0.0",
+    "semver": "^5.1.0",
+    "shell-quote": "^1.5.0",
+    "cross-spawn": "^2.2.2"
+  },
+  "scripts": {
+    "start": "ava --watch",
+    "test": "ava",
+    "lint": "eslint src test",
+    "cover": "abby cover:*",
+    "cover:test": "nyc --reporter=lcov --reporter=text ava",
+    "cover:report": "node -e \"if(process.env.TRAVIS){}else{process.exit(1)}\" && codeclimate-test-reporter < coverage/lcov.info || echo skip coverage report",
+    "build": "abby 'babel src --out-dir lib' --env --parse raw",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "postversion": "git push --follow-tags && conventional-github-releaser -p angular -r 0"
+  },
+  "abigail": {
+    "plugins": {
+      "watch": false,
+      "parse": "serial",
+      "launch": "force"
+    }
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
+  "devDependencies": {
+    "abigail": "^1.6.1",
+    "ava": "^0.14.0",
+    "babel-cli": "^6.6.5",
+    "babel-eslint": "^6.0.2",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-espower": "^2.1.2",
+    "babel-plugin-transform-object-assign": "^6.5.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "babel-register": "^6.7.2",
+    "bluebird": "^3.3.5",
+    "chokidar": "^1.4.3",
+    "codeclimate-test-reporter": "^0.3.1",
+    "conventional-changelog-cli": "^1.1.1",
+    "conventional-github-releaser": "^1.1.1",
+    "eslint": "^2.6.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "nyc": "^6.1.1"
+  },
+  "keywords": [
+    "npm",
+    "path",
+    "child",
+    "process",
+    "spawn",
+    "local",
+    "bin",
+    "shell"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/59naga/npm-run-script.git"
+  },
+  "author": "59naga <i59naga@icloud.com> (http://berabou.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/59naga/npm-run-script/issues"
+  },
+  "homepage": "https://github.com/59naga/npm-run-script#readme"
+}
