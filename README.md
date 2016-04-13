@@ -43,7 +43,7 @@ node -e "require('execa').shell('eslint',{stdout:'inherit'}).then((result)=>cons
 `npm-run-script` inherits the stdio, and run the command and returns the [child_process](https://nodejs.org/api/child_process.html).
 
 ```bash
-node -e "require('npm-run-script')('eslint').once('exit',(code)=> console.log('exit in',code))"
+node -e "require('npm-run-script')('eslint').once('exit',(code)=>console.log('exit in',code))"
 # eslint [options] file.js [file.js] [dir]
 #
 # Basic configuration:
