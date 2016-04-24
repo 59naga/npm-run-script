@@ -1,7 +1,7 @@
 {
   "name": "npm-run-script",
   "description": "emulate the `npm run-script` using stdio",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib",
   "files": [
     "lib"
