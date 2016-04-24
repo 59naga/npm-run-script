@@ -9,7 +9,7 @@
   "dependencies": {
     "npm-run-path": "^1.0.0",
     "semver": "^5.1.0",
-    "shell-quote": "^1.5.0",
+    "shell-quote": "^1.6.0",
     "cross-spawn": "^2.2.2"
   },
   "scripts": {
