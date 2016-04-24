@@ -20,7 +20,6 @@
     "cover:test": "nyc --reporter=lcov --reporter=text ava",
     "cover:report": "node -e \"if(process.env.TRAVIS){}else{process.exit(1)}\" && codeclimate-test-reporter < coverage/lcov.info || echo skip coverage report",
     "build": "abby 'babel src --out-dir lib' --env --parse raw",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "postversion": "git push --follow-tags && conventional-github-releaser -p angular -r 0"
   },
   "abigail": {
