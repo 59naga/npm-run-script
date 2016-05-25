@@ -1,6 +1,5 @@
 // dependencies
 import test from 'ava';
-import Promise from 'bluebird';
 
 // target
 import npmRunScript from '../src';

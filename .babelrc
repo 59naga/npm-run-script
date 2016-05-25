@@ -5,6 +5,7 @@
   ],
   "plugins": [
     "transform-object-assign",
+    "transform-bluebird",
     "add-module-exports"
   ],
   "env": {
