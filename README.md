@@ -28,7 +28,7 @@ Motivation
 
 ```bash
 npm install eslint
-node -e "require('child_process').exec('eslint',{stdout:'inherit'}).stderr.pipe(process.stderr)"
+node -e "require('child_process').exec('eslint').stderr.pipe(process.stderr)"
 # /bin/sh: eslint: command not found
 ```
 
@@ -36,7 +36,7 @@ by using [execa](https://github.com/sindresorhus/execa), this problem can be sol
 
 ```bash
 npm install execa
-node -e "require('execa').shell('eslint',{stdout:'inherit'}).then((result)=>console.log(result))"
+node -e "require('execa').shell('eslint').then((result)=>console.log(result))"
 # { stdout: 'eslint [options] file.js [file.js] [ ...
 ```
 
