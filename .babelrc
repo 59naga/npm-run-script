@@ -7,12 +7,5 @@
     "transform-object-assign",
     "transform-bluebird",
     "add-module-exports"
-  ],
-  "env": {
-    "development": {
-      "plugins": [
-        "espower"
-      ]
-    }
-  }
+  ]
 }
